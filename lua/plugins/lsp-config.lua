@@ -4,7 +4,7 @@ return {
 		cmd = { "Mason", "MasonUpdate", "MasonInstall", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
 		config = function()
 			require("mason").setup()
-		end
+		end,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
@@ -13,19 +13,20 @@ return {
 				"lua_ls",
 				"rust_analyzer",
 				"tsserver",
+				"stylua",
+				"eslint",
 			},
 		},
---		event = "VeryLazy",
+		--		event = "VeryLazy",
 		lazy = false,
 	},
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
 			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup {}
-			lspconfig.rust_analyzer.setup {}
-			lspconfig.tsserver.setup {}
-		end
+			lspconfig.lua_ls.setup({})
+			lspconfig.rust_analyzer.setup({})
+			lspconfig.tsserver.setup({})
+		end,
 	},
 }
-
