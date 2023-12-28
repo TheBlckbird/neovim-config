@@ -24,3 +24,5 @@ require("lualine").setup()
 vim.cmd('colorscheme rose-pine')
 
 require("mappings")
+
+
