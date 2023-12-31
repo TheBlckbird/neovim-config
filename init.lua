@@ -1,5 +1,8 @@
-require("vim-opts")
+local sounds = require("sounds")
 
+sounds.play("~/.config/nvim/startup.mp3")
+
+require("vim-opts")
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({ "git",
@@ -19,10 +22,11 @@ local lazy_opts = {
 }
 
 require("lazy").setup("plugins", lazy_opts)
-require("lualine").setup()
+--require("lualine").setup()
 
 vim.cmd('colorscheme rose-pine')
 
 require("mappings")
+-- require("sounds")
 
-
+vim.notify = require("notify")

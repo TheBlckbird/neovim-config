@@ -13,7 +13,7 @@ return {
 				"lua_ls",
 				"rust_analyzer",
 				"tsserver",
-				"stylua",
+				-- "stylua",
 				"eslint",
 			},
 		},
@@ -24,9 +24,18 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({})
-			lspconfig.rust_analyzer.setup({})
-			lspconfig.tsserver.setup({})
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+			lspconfig.lua_ls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.rust_analyzer.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.tsserver.setup({
+				capabilities = capabilities,
+			})
 		end,
 	},
 }
+
