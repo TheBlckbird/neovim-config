@@ -1,5 +1,13 @@
 return {
 	{
+		"hrsh7th/cmp-buffer",
+		event = "BufEnter",
+	},
+	{
+		"hrsh7th/cmp-path",
+		event = "BufEnter",
+	},
+	{
 		"hrsh7th/cmp-nvim-lsp",
 	},
 	{
@@ -36,8 +44,8 @@ return {
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" }, -- For luasnip users.
-				}, {
 					{ name = "buffer" },
+					{ name = "path" },
 				}),
 			})
 		end,
