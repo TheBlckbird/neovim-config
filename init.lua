@@ -23,11 +23,20 @@ local lazy_opts = {
 }
 
 require("lazy").setup("plugins", lazy_opts)
---require("lualine").setup()
+require("lualine").setup()
 
 vim.cmd("colorscheme catppuccin")
 
-require("mappings")
+-- require("mappings")
 -- require("sounds")
 
 vim.notify = require("notify")
+
+-- Enable inlay hints
+-- if vim.lsp.inlay_hint then
+-- 	vim.lsp.inlay_hint.enable(0, true)
+-- end
+
+-- vim.schedule(function()
+-- vim.cmd(":lua vim.lsp.inlay_hint.enable(0, true)")
+-- end)

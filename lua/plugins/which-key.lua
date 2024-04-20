@@ -4,6 +4,9 @@ return {
 	init = function()
 		vim.o.timeout = true
 		vim.o.timeoutlen = 300
+
+		local wk = require("which-key")
+		wk.register(require("mappings"))
 	end,
 	opts = {
 		-- your configuration comes here

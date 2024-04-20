@@ -13,7 +13,7 @@ return {
 				"lua_ls",
 				"rust_analyzer",
 				"tsserver",
-				-- "stylua",
+				"stylua",
 				"eslint",
 			},
 		},
@@ -38,4 +38,3 @@ return {
 		end,
 	},
 }
-

@@ -1,14 +1,39 @@
-vim.keymap.set("n", "<leader>e", ":Neotree filesystem toggle left<CR>", { silent = true })
-vim.keymap.set("n", "<leader>n", ":Neotree filesystem reveal left<CR>", { silent = true })
+-- local rust_tools = require("rustaceanvim")
 
-vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+return {
+	["<leader>"] = {
+		e = { "<cmd>Neotree filesystem toggle left<CR>", "Toggle Neotree" },
+		n = { "<cmd>Neotree filesystem reveal left<CR>", "Reveal Neotree" },
 
-vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+		ih = { "<cmd>lua vim.lsp.inlay_hint.enable(0, true)<CR>", "Enable inlay hints" },
 
-vim.keymap.set("n", "m", "o<ESC>")
+		c = {
+			name = "+lsp actions",
+			a = { vim.lsp.buf.code_action, {}, "Show code actions" },
+		},
 
-vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { silent = true })
-vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { silent = true })
+		g = {
+			name = "+more lsp actions",
+			d = { vim.lsp.buf.definition, {}, "Goto definition" },
+			r = { vim.lsp.buf.references, {}, "Goto references" },
+			f = { vim.lsp.buf.format, {}, "Format document" },
+		},
+
+		-- rt = {
+		-- 	name = "+rust tools",
+		-- 	c = { rust_tools.open_cargo_toml.open_cargo_toml(), "Open Cargo.toml" },
+		-- 	e = { rust_tools.expand_macro.expand_macro(), "Expand Macro" },
+		-- 	r = { rust_tools.runnables.runnables(), "Runnables" },
+		-- 	h = { rust_tools.inlay_hints.enable(), "Enable inlay hints" },
+		-- },
+		
+		l = {
+			a = {"<cmd> "}
+		}
+	},
+
+	K = { vim.lsp.buf.hover, {}, "Show hover lsp action" },
+	m = { "o<ESC>", "Add newline" },
+	["<Tab>"] = { "<cmd>BufferLineCycleNext<CR>", "Cycle to next tab" },
+	["<S-Tab>"] = { "<cmd>BufferLineCyclePrev<CR>", "Cycle to previous tab" },
+}
