@@ -7,5 +7,6 @@ set.rnu = true
 set.ignorecase = true
 set.smartcase = true
 set.clipboard = "unnamedplus"
+set.cursorline = true
 
 vim.g.mapleader = " "
