@@ -2,5 +2,5 @@ return {
 	"folke/trouble.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	opts = {},
-	event = "BufEnter",
+	event = "VeryLazy",
 }
