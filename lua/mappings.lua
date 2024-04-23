@@ -26,10 +26,13 @@ return {
 		-- 	r = { rust_tools.runnables.runnables(), "Runnables" },
 		-- 	h = { rust_tools.inlay_hints.enable(), "Enable inlay hints" },
 		-- },
-		
+
 		l = {
-			a = {"<cmd> "}
-		}
+			a = { "<cmd> " },
+		},
+
+		x = { "<cmd>BufferLineCyclePrev<CR><cmd>BufferLineCloseRight<CR>", "Close current tab" },
+		p = { "<cmd>BufferLineTogglePin", "Toggle pinned tab" },
 	},
 
 	K = { vim.lsp.buf.hover, {}, "Show hover lsp action" },
